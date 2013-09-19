@@ -9,12 +9,12 @@ namespace MonoFramework
 {
     public abstract class GameObjectBase
     {
-        public GameObjectBase(Game game)
+        public GameObjectBase(GameHost game)
         {
-            Game = game;
+            GameHost = game;
         }
 
-        protected Game Game { get; set; }
+        protected GameHost GameHost { get; set; }
 
         public int UpdateCount { get; set; }
 

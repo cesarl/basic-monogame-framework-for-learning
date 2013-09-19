@@ -129,7 +129,7 @@
   <ItemGroup>
     <Compile Include="GameObjectBase.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Game1.cs" />
+    <Compile Include="GameHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpriteObject.cs" />
     <Compile Include="TextObject.cs" />

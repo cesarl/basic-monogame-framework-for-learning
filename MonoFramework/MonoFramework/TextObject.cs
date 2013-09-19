@@ -24,32 +24,32 @@ namespace MonoFramework
             Far
         };
 
-        public TextObject(Game game)
+        public TextObject(GameHost game)
             : base(game)
         {
             Scale = new Vector2(1,1);
             SpriteColor = Color.White;
         }
 
-        public TextObject(Game game, SpriteFont font)
+        public TextObject(GameHost game, SpriteFont font)
             : this(game)
         {
             Font = font;
         }
 
-        public TextObject(Game game, SpriteFont font, Vector2 position)
+        public TextObject(GameHost game, SpriteFont font, Vector2 position)
             : this(game, font)
         {
             Position = position;
         }
 
-        public TextObject(Game game, SpriteFont font, Vector2 position, String text)
+        public TextObject(GameHost game, SpriteFont font, Vector2 position, String text)
             : this(game, font, position)
         {
             Text = text;
         }
 
-        public TextObject(Game game, SpriteFont font, Vector2 position, String text, TextAlignement horizontal, TextAlignement vertical)
+        public TextObject(GameHost game, SpriteFont font, Vector2 position, String text, TextAlignement horizontal, TextAlignement vertical)
             : this(game, font, position, text)
         {
             HorAlign = horizontal;

@@ -10,20 +10,20 @@ namespace MonoFramework
 {
     public class SpriteObject : GameObjectBase
     {
-        public SpriteObject(Game game)
+        public SpriteObject(GameHost game)
             : base(game)
         {
             Scale = new Vector2(1,1);
             SpriteColor = Color.White;
         }
 
-        public SpriteObject(Game game, Vector2 position)
+        public SpriteObject(GameHost game, Vector2 position)
             : this(game)
         {
             Position = position;
         }
 
-        public SpriteObject(Game game, Vector2 position, Texture2D texture)
+        public SpriteObject(GameHost game, Vector2 position, Texture2D texture)
             : this(game, position)
         {
             SpriteTexture = texture;
