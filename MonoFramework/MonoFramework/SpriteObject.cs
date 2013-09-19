@@ -92,6 +92,25 @@ namespace MonoFramework
                 spriteBatch.Draw(SpriteTexture, Position, Rect, SpriteColor, Angle, Origin, Scale, SpriteEffects.None, Depth);
         }
 
-    }
+        public virtual Rectangle BoundingBox
+        {
+            get
+            {
+                Rectangle res;
+                Vector2 spriteSize;
+                if (Rect.IsEmpty)
+                {
+                    spriteSize = new Vector2(SpriteTexture.Width, SpriteTexture.Height);
+                }
+                else
+                {
+                    spriteSize = new Vector2(Rect.Width, Rect.Height);
+                }
 
+                res = new Rectangle((int)Position.X, (int)Position.Y, (int)(spriteSize.X * ScaleX), (int)(spriteSize.Y * ScaleY));
+                res.Offset((int)(-OriginX * ScaleX), (int)(-OriginY * ScaleY));
+                return res;
+            }
+        }
+    }
 }
