@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultipleGameObject", "MultipleGameObject\MultipleGameObject.csproj", "{F885E2EE-BCA8-42AF-999F-C7C64B06586D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Debug|ARM.ActiveCfg = Debug|ARM
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Debug|ARM.Build.0 = Debug|ARM
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Debug|ARM.Deploy.0 = Debug|ARM
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Debug|x64.ActiveCfg = Debug|x64
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Debug|x64.Build.0 = Debug|x64
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Debug|x64.Deploy.0 = Debug|x64
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Debug|x86.ActiveCfg = Debug|x86
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Debug|x86.Build.0 = Debug|x86
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Debug|x86.Deploy.0 = Debug|x86
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Release|ARM.ActiveCfg = Release|ARM
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Release|ARM.Build.0 = Release|ARM
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Release|ARM.Deploy.0 = Release|ARM
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Release|x64.ActiveCfg = Release|x64
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Release|x64.Build.0 = Release|x64
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Release|x64.Deploy.0 = Release|x64
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Release|x86.ActiveCfg = Release|x86
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Release|x86.Build.0 = Release|x86
+		{F885E2EE-BCA8-42AF-999F-C7C64B06586D}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

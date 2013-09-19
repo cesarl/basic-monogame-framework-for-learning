@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
 
-  <Identity Name="e4026cf3-a57c-4ca3-8d07-afef18ef2d7c"
+  <Identity Name="74a0e0e2-970c-440a-9699-22a2968cf648"
             Publisher="CN=cesar"
             Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>MonoFramework</DisplayName>
+    <DisplayName>MultipleGameObject</DisplayName>
     <PublisherDisplayName>cesar</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -23,12 +23,12 @@
   <Applications>
     <Application Id="App"
         Executable="$targetnametoken$.exe"
-        EntryPoint="MonoFramework.App">
+        EntryPoint="MultipleGameObject.App">
         <VisualElements
-            DisplayName="MonoFramework"
+            DisplayName="MultipleGameObject"
             Logo="Assets\Logo.png"
             SmallLogo="Assets\SmallLogo.png"
-            Description="MonoFramework"
+            Description="MultipleGameObject"
             ForegroundText="light"
             BackgroundColor="#464646">
             <DefaultTile ShowName="allLogos" />
