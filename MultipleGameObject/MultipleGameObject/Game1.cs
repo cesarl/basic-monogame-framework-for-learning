@@ -40,14 +40,11 @@ namespace MultipleGameObject
             // Create a new SpriteBatch, which can be used to draw textures.
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            Textures.Add("Box", this.Content.Load<Texture2D>("Background"));
+            Textures.Add("Heart", this.Content.Load<Texture2D>("Heart2"));
 
             for (int i = 0; i < 10; i++)
             {
-                SpriteObject tmp = new SpriteObject(this, new Vector2(i * 20, i * 20), Textures["Box"]);
-                tmp.Scale = new Vector2((float)i / 0.9f, (float)i / 0.9f);
-                tmp.Angle = i;
-                GameObjects.Add(tmp);
+                GameObjects.Add(new BoxObject(this, Textures["Heart"]));
             }
 
             //Fonts.Add("Lobster", Content.Load<SpriteFont>("Lobster"));
