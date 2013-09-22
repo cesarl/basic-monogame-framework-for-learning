@@ -47,7 +47,7 @@ namespace MultipleGameObject
                 GameObjects.Add(new BoxObject(this, Textures["Heart"]));
             }
 
-            Fonts.Add("Font1", Content.Load<SpriteFont>("SpriteFont1"));
+            Fonts.Add("Font1", Content.Load<SpriteFont>("Default"));
 
             TextObject message;
 

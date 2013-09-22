@@ -122,5 +122,11 @@ namespace MonoFramework
                 case TextAlignement.Far: OriginY = size.Y; break;
             }
         }
+
+        public override void Draw(GameTime time, SpriteBatch spriteBatch)
+        {
+            //base.Draw(time, spriteBatch);
+            spriteBatch.DrawString(Font, Text, Position, SpriteColor);
+        }
     }
 }

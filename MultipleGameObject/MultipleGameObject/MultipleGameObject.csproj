@@ -147,6 +147,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\SpriteFont1.xnb" />
+    <Content Include="Content\Default.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="MultipleGameObject_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
