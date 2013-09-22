@@ -47,14 +47,14 @@ namespace MultipleGameObject
                 GameObjects.Add(new BoxObject(this, Textures["Heart"]));
             }
 
-            //Fonts.Add("Lobster", Content.Load<SpriteFont>("Lobster"));
+            Fonts.Add("Font1", Content.Load<SpriteFont>("SpriteFont1"));
 
-            //TextObject message;
+            TextObject message;
 
-            //message = new TextObject(this, Fonts["Lobster"], new Vector2(GraphicsDevice.Viewport.Bounds.Width / 2, GraphicsDevice.Viewport.Height / 2), "MonoGame Game Development", TextObject.TextAlignement.Center, TextObject.TextAlignement.Center);
-            //message.SpriteColor = Color.DarkBlue;
-            //message.Scale = new Vector2(1.0f, 1.5f);
-            //GameObjects.Add(message);
+            message = new TextObject(this, Fonts["Font1"], new Vector2(10, 10), "MonoGame Game Development", TextObject.TextAlignement.Center, TextObject.TextAlignement.Center);
+            message.SpriteColor = Color.Black;
+            message.Scale = new Vector2(1f, 1f);
+            GameObjects.Add(message);
         }
 
         /// <summary>
@@ -88,6 +88,7 @@ namespace MultipleGameObject
 
             _spriteBatch.Begin();
             DrawSprites(gameTime, _spriteBatch);
+            DrawText(gameTime, _spriteBatch);
             _spriteBatch.End();
 
             // TODO: Add your drawing code here

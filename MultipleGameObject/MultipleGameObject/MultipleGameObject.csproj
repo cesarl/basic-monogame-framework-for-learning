@@ -143,6 +143,10 @@
     <Content Include="Content\Lobster.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\font2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\SpriteFont1.xnb" />
     <None Include="MultipleGameObject_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
