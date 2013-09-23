@@ -11,6 +11,7 @@ namespace SpaceShooter
     {
         GraphicsDeviceManager _graphics;
         SpriteBatch _spriteBatch;
+        Spaceship spaceShip_;
 
         public Game1()
         {
@@ -43,9 +44,14 @@ namespace SpaceShooter
             Textures.Add("Rock1", Content.Load<Texture2D>("Rock1"));
             Textures.Add("Rock2", Content.Load<Texture2D>("Rock2"));
             Textures.Add("Rock3", Content.Load<Texture2D>("Rock3"));
+            Textures.Add("Spaceship", Content.Load<Texture2D>("Spaceship"));
             Textures.Add("Smoke", Content.Load<Texture2D>("SmokeParticle"));
 
             Fonts.Add("Default", Content.Load<SpriteFont>("Default"));
+
+            // Add Spaceship
+            spaceShip_ = new Spaceship(this, Textures["Spaceship"], new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2));
+            GameObjects.Add(spaceShip_);
 
             // Initialize Benchmark
 
@@ -53,7 +59,7 @@ namespace SpaceShooter
 
             // Initialize asteroids
 
-            for (int i = 0; i < 10; ++i)
+            for (int i = 0; i < 150; ++i)
             { 
                 GameObjects.Add(new Asteroid(this, new Vector2(
                     GameHelper.RandomNext(0, GraphicsDevice.Viewport.Bounds.Right),

@@ -85,19 +85,19 @@ namespace SpaceShooter
             {
                 PositionY = GameHost.GraphicsDevice.Viewport.Bounds.Height - OriginY;
                 Direction *= new Vector2(1f, -1f);
-                //Life--;
-                //GameHost.GameObjects.Add(Split());
-
-
-                ((Game1)GameHost).SetParticles(10, new Vector2(
-                    GameHelper.RandomNext(0, GameHost.GraphicsDevice.Viewport.Bounds.Right),
-                    GameHelper.RandomNext(0, GameHost.GraphicsDevice.Viewport.Bounds.Bottom)));
             }
         }
 
         public Asteroid Split()
         {
             return new Asteroid(GameHost, Position, Life);
+        }
+
+        public void Damage()
+        {
+                Life--;
+                GameHost.GameObjects.Add(Split());
+                ((Game1)GameHost).SetParticles(30, Position);
         }
     }
 }
