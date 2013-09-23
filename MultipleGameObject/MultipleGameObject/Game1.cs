@@ -42,7 +42,7 @@ namespace MultipleGameObject
 
             Textures.Add("Heart", this.Content.Load<Texture2D>("Heart2"));
 
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 10000; i++)
             {
                 GameObjects.Add(new BoxObject(this, Textures["Heart"]));
             }
