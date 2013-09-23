@@ -44,14 +44,20 @@ namespace SpaceShooter
             Textures.Add("Rock2", Content.Load<Texture2D>("Rock2"));
             Textures.Add("Rock3", Content.Load<Texture2D>("Rock3"));
 
+            Fonts.Add("Default", Content.Load<SpriteFont>("Default"));
 
-            // initialize ateroids
+            // Initialize Benchmark
+
+            GameObjects.Add(new Benchmark(this, Fonts["Default"], new Vector2(0f, 0f), Color.White));
+
+            // Initialize asteroids
 
             for (int i = 0; i < 10; ++i)
             { 
                 GameObjects.Add(new Asteroid(this, new Vector2(
                     GameHelper.RandomNext(0, GraphicsDevice.Viewport.Bounds.Right),
-                    GameHelper.RandomNext(0, GraphicsDevice.Viewport.Bounds.Bottom)))
+                    GameHelper.RandomNext(0, GraphicsDevice.Viewport.Bounds.Bottom)),
+                    GameHelper.RandomNext(1, 4))
                 );
             }
         }
@@ -83,7 +89,7 @@ namespace SpaceShooter
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             _spriteBatch.Begin();
             DrawSprites(gameTime, _spriteBatch);

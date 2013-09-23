@@ -23,13 +23,19 @@ namespace SpaceShooter
             {
                 Direction = new Vector2(GameHelper.RandomNext(0f, 1f), GameHelper.RandomNext(0f, 1f));
             } while (Direction == Vector2.Zero);
-            SpriteTexture = GameHost.Textures[asteroidTextures[GameHelper.RandomNext(0, 2)]];
+            SpriteTexture = GameHost.Textures[asteroidTextures[GameHelper.RandomNext(0, 3)]];
         }
 
         public Asteroid(GameHost game, Vector2 position)
             : this(game)
         {
             Position = position;
+        }
+
+        public Asteroid(GameHost game, Vector2 position, int life)
+            : this(game, position)
+        {
+            Life = life;
         }
 
         private Vector2 direction_ = new Vector2();
@@ -43,8 +49,13 @@ namespace SpaceShooter
         public float Speed
         { get; set; }
 
+        private int life_;
+
         public int Life
-        { get; set; }
+        {
+            get { return life_; }
+            set { life_ = value; Scale = new Vector2(value, value) / 3.0f; }
+        }
 
         public float RotateSpeed
         { get; set; }
@@ -58,7 +69,7 @@ namespace SpaceShooter
             if (PositionX < OriginX)
             {
                 PositionX = OriginX;
-                Direction *= new Vector2(-1f, 1f);         
+                Direction *= new Vector2(-1f, 1f);
             }
             else if (PositionX > GameHost.GraphicsDevice.Viewport.Bounds.Width - OriginX)
             {
@@ -73,9 +84,15 @@ namespace SpaceShooter
             else if (PositionY > GameHost.GraphicsDevice.Viewport.Bounds.Height - OriginY)
             {
                 PositionY = GameHost.GraphicsDevice.Viewport.Bounds.Height - OriginY;
-                Direction *= new Vector2(1f, -1f);         
+                Direction *= new Vector2(1f, -1f);
+                Life--;
+                GameHost.GameObjects.Add(Split());
             }
+        }
 
+        public Asteroid Split()
+        {
+            return new Asteroid(GameHost, Position, Life);
         }
     }
 }

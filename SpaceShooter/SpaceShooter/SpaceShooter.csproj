@@ -142,6 +142,7 @@
     <Content Include="Content\Rock1.xnb" />
     <Content Include="Content\Rock2.xnb" />
     <Content Include="Content\Rock3.xnb" />
+    <Content Include="Content\Default.xnb" />
     <None Include="SpaceShooter_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

@@ -123,7 +123,7 @@ namespace MonoFramework
             }
         }
 
-        public override void Draw(GameTime time, SpriteBatch spriteBatch)
+public override void Draw(GameTime time, SpriteBatch spriteBatch)
         {
             //base.Draw(time, spriteBatch);
             spriteBatch.DrawString(Font, Text, Position, SpriteColor);
