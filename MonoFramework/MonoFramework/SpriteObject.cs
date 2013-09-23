@@ -10,6 +10,9 @@ namespace MonoFramework
 {
     public class SpriteObject : GameObjectBase
     {
+
+        private Rectangle boundingBox_ = new Rectangle();
+
         public SpriteObject(GameHost game)
             : base(game)
         {
@@ -96,20 +99,31 @@ namespace MonoFramework
         {
             get
             {
-                Rectangle res;
-                Vector2 spriteSize;
+                //Rectangle res;
+                int spriteSizeX;
+                int spriteSizeY;
+
                 if (Rect.IsEmpty)
                 {
-                    spriteSize = new Vector2(SpriteTexture.Width, SpriteTexture.Height);
+                    spriteSizeX = SpriteTexture.Width;
+                    spriteSizeY = SpriteTexture.Height;
                 }
                 else
                 {
-                    spriteSize = new Vector2(Rect.Width, Rect.Height);
+                    spriteSizeX = Rect.Width;
+                    spriteSizeY = Rect.Height;
                 }
 
-                res = new Rectangle((int)Position.X, (int)Position.Y, (int)(spriteSize.X * ScaleX), (int)(spriteSize.Y * ScaleY));
-                res.Offset((int)(-OriginX * ScaleX), (int)(-OriginY * ScaleY));
-                return res;
+                boundingBox_.X = (int)PositionX;
+                boundingBox_.Y = (int)PositionY;
+
+                boundingBox_.Width = (int)(spriteSizeX * ScaleX);
+                boundingBox_.Height = (int)(spriteSizeY * ScaleY);
+                boundingBox_.Offset((int)(-OriginX * ScaleX), (int)(-OriginY * ScaleY));
+//                res = new Rectangle((int)Position.X, (int)Position.Y, (int)(spriteSize.X * ScaleX), (int)(spriteSize.Y * ScaleY));
+//                res.Offset((int)(-OriginX * ScaleX), (int)(-OriginY * ScaleY));
+                //return res;
+                return boundingBox_;
             }
         }
     }

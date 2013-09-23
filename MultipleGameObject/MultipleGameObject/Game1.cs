@@ -42,7 +42,7 @@ namespace MultipleGameObject
 
             Textures.Add("Heart", this.Content.Load<Texture2D>("Heart2"));
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 GameObjects.Add(new BoxObject(this, Textures["Heart"]));
             }
@@ -54,7 +54,8 @@ namespace MultipleGameObject
             message = new TextObject(this, Fonts["Font1"], new Vector2(10, 10), "MonoGame Game Development", TextObject.TextAlignement.Center, TextObject.TextAlignement.Center);
             message.SpriteColor = Color.Black;
             message.Scale = new Vector2(1f, 1f);
-            GameObjects.Add(message);
+            //GameObjects.Add(message);
+            GameObjects.Add(new Benchmark(this, Fonts["Font1"], new Vector2(0, 0), Color.Black));
         }
 
         /// <summary>

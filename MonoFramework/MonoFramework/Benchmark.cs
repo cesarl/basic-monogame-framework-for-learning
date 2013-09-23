@@ -37,13 +37,22 @@ namespace MonoFramework
                 newDrawCount = drawCount_ - lastDrawCount_;
                 newUpdateCount = UpdateCount - lastUpdateCount_;
                 newElapsedTime = gameTime.TotalGameTime.TotalMilliseconds - lastTimeUpdate_;
-            }
+                strBuilder_.Length = 0;
+                strBuilder_.AppendLine("Object count : " + GameHost.GameObjects.Count.ToString());
+                strBuilder_.AppendLine("Frames per second: " + ((float)newDrawCount / newElapsedTime * 1000).ToString("0.0"));
+                strBuilder_.AppendLine("Updates per second: " + ((float)newUpdateCount / newElapsedTime * 1000).ToString("0.0"));
+                Text = strBuilder_.ToString();
 
-            strBuilder_.Length = 0;
-            strBuilder_.AppendLine("Object count : " + GameHost.GameObjects.Count.ToString());
-            //strBuilder_.AppendLine("Frames per second: " + ((float)newDrawCount / newElapsedTime * 1000).ToString("0.0"));
-            //strBuilder_.AppendLine("Updates per second: " + ((float)newUpdateCount / newElapsedTime * 1000).ToString("0.0"));
-            Text = strBuilder_.ToString();
+                lastTimeUpdate_ = gameTime.TotalGameTime.TotalMilliseconds;
+                lastDrawCount_ = drawCount_;
+                lastUpdateCount_ = UpdateCount;
+            }
+        }
+
+        public override void Draw(GameTime time, SpriteBatch spriteBatch)
+        {
+            base.Draw(time, spriteBatch);
+            ++drawCount_;
         }
     }
 }

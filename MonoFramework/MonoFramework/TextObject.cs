@@ -12,7 +12,7 @@ namespace MonoFramework
     {
 
         private SpriteFont font_;
-        private string text_;
+        private string text_ = "";
         private TextAlignement horizontalAlign_ = TextAlignement.Manual;
         private TextAlignement verticalAlign_ = TextAlignement.Manual;
 

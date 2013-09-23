@@ -32,7 +32,7 @@ namespace MultipleGameObject
         {
             base.Update(gameTime);
             PositionY += vel_;
-            if (BoundingBox.Top > GameHost.GraphicsDevice.Viewport.Bounds.Bottom)
+            if (PositionY > GameHost.GraphicsDevice.Viewport.Bounds.Bottom)
             {
                 PositionY = -SpriteTexture.Height;
             }
