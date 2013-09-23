@@ -99,5 +99,27 @@ namespace SpaceShooter
 
             base.Draw(gameTime);
         }
+
+        public Vector2 Prout { get; set; }
+
+        public void SetParticles(int n, Vector2 position)
+        {
+            int rest = n;
+            GameObjectBase obj;
+
+            for (int i = 0, mi = GameObjects.Count; i < mi; ++i)
+            { 
+                obj = GameObjects[i];
+                if (!(obj is Particle) || ((Particle)obj).IsActive)
+                    continue;
+                ((Particle)obj).Reset(position, Textures["Smoke"]);
+                --rest;
+            }
+            while (rest > 0)
+            {
+                GameObjects.Add(new Particle(this, position, Textures["Smoke"]));
+                --rest;
+            }
+        }
     }
 }

@@ -74,7 +74,7 @@ namespace SpaceShooter
             else if (PositionX > GameHost.GraphicsDevice.Viewport.Bounds.Width - OriginX)
             {
                 PositionX = GameHost.GraphicsDevice.Viewport.Bounds.Width - OriginX;
-                Direction *= new Vector2(-1f, 1f);         
+                Direction *= new Vector2(-1f, 1f);
             }
             else if (PositionY < OriginY)
             {
@@ -87,6 +87,11 @@ namespace SpaceShooter
                 Direction *= new Vector2(1f, -1f);
                 //Life--;
                 //GameHost.GameObjects.Add(Split());
+
+
+                ((Game1)GameHost).SetParticles(10, new Vector2(
+                    GameHelper.RandomNext(0, GameHost.GraphicsDevice.Viewport.Bounds.Right),
+                    GameHelper.RandomNext(0, GameHost.GraphicsDevice.Viewport.Bounds.Bottom)));
             }
         }
 
