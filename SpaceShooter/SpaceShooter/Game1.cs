@@ -43,6 +43,7 @@ namespace SpaceShooter
             Textures.Add("Rock1", Content.Load<Texture2D>("Rock1"));
             Textures.Add("Rock2", Content.Load<Texture2D>("Rock2"));
             Textures.Add("Rock3", Content.Load<Texture2D>("Rock3"));
+            Textures.Add("Smoke", Content.Load<Texture2D>("SmokeParticle"));
 
             Fonts.Add("Default", Content.Load<SpriteFont>("Default"));
 

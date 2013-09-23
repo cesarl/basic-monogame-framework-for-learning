@@ -85,8 +85,8 @@ namespace SpaceShooter
             {
                 PositionY = GameHost.GraphicsDevice.Viewport.Bounds.Height - OriginY;
                 Direction *= new Vector2(1f, -1f);
-                Life--;
-                GameHost.GameObjects.Add(Split());
+                //Life--;
+                //GameHost.GameObjects.Add(Split());
             }
         }
 
