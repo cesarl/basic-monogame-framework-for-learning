@@ -113,7 +113,7 @@ namespace SpaceShooter
             int rest = n;
             GameObjectBase obj;
 
-            for (int i = 0, mi = GameObjects.Count; i < mi; ++i)
+            for (int i = 0, mi = GameObjects.Count; i < mi && rest > 0; ++i)
             { 
                 obj = GameObjects[i];
                 if (!(obj is Particle) || ((Particle)obj).IsActive)

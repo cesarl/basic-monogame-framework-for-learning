@@ -83,8 +83,8 @@ namespace SpaceShooter
                 Direction = new Vector2(GameHelper.RandomNext(-1.0f, 1.0f), GameHelper.RandomNext(-1.0f, 1.0f));
             } while (Direction == Vector2.Zero);
             Direction.Normalize();
-            Inertia = 1.0f;
-            Speed = GameHelper.RandomNext(0f, 2f);
+            Inertia = GameHelper.RandomNext(0.2f, 1.0f);
+            Speed = GameHelper.RandomNext(0f, 5f);
             SpriteColor = new Color(255, 255, 255);
         }
 
