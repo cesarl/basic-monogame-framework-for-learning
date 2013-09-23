@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MonoFramework;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace SpaceShooter
@@ -26,6 +27,11 @@ namespace SpaceShooter
 
         private int ExplosionUpdateCount { get; set; }
 
+        private Vector2 vel_ = new Vector2(0.0f, 0.0f);
+        private const float speed_ = 4.0f;
+        private const float acc_ = 0.1f;
+        private const float inertia_ = 0.95f;
+
         public override void Update(GameTime gameTime)
         {
             SpriteObject collisionObj;
@@ -46,6 +52,21 @@ namespace SpaceShooter
                     Explode();
                 }
             }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                vel_.Y -= acc_;
+            if (Keyboard.GetState().IsKeyDown(Keys.Down))
+                vel_.Y += acc_;
+            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                vel_.X -= acc_;
+            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                vel_.X += acc_;
+           // vel_.Normalize();
+            Position += vel_ *speed_;
+            vel_ *= inertia_;
+
+
+
             base.Update(gameTime);
         }
 
