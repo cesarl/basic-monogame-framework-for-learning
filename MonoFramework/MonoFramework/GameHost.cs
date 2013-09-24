@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 using System.Collections.Generic;
 using MonoFramework;
 
@@ -14,11 +16,16 @@ namespace MonoFramework
             Textures = new Dictionary<string, Texture2D>();
             Fonts = new Dictionary<string, SpriteFont>();
             GameObjects = new List<GameObjectBase>();
+            SoundEffects = new Dictionary<string, SoundEffect>();
+            Songs = new Dictionary<string, Song>();
+            
         }
 
         public Dictionary<string, Texture2D> Textures { get; set; }
         public Dictionary<string, SpriteFont> Fonts { get; set; }
         public List<GameObjectBase> GameObjects { get; set; }
+        public Dictionary<string, SoundEffect> SoundEffects { get; set; }
+        public Dictionary<string, Song> Songs { get; set; }
 
         protected virtual void UpdateAll(GameTime time)
         {

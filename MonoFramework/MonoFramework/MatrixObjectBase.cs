@@ -149,5 +149,10 @@ namespace MonoFramework
             effect.World = Transformation;
         }
 
+        public override bool IsPointInObject(Vector2 point)
+        {
+            return false;
+        }
+
     }
 }
