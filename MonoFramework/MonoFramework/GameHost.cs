@@ -144,5 +144,32 @@ namespace MonoFramework
             return sel;
         }
 
+        public virtual void DrawObjects(GameTime time, Effect effect)
+        {
+            DrawObjects(time, effect, false, null);
+        }
+
+        public virtual void DrawObjects(GameTime time, Effect effect, Texture2D tex)
+        {
+            DrawObjects(time, effect, true, tex);
+        }
+
+        public virtual void DrawObjects(GameTime time, Effect effect, bool texOnly, Texture2D tex)
+        {
+            GameObjectBase obj;
+            int c;
+
+            c = objectArray_.Length;
+            for (int i = 0; i < c; ++i)
+            {
+                obj = objectArray_[i];
+                if (!(obj is MatrixObjectBase))
+                    continue;
+                if (!texOnly || ((MatrixObjectBase)obj).ObjectTexture == tex)
+                {
+                    ((MatrixObjectBase)obj).Draw(time, effect);
+                }
+            }
+        }
     }
 }
