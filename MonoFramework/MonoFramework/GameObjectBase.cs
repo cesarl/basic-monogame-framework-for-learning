@@ -22,5 +22,7 @@ namespace MonoFramework
         {
             UpdateCount += 1;
         }
+
+        public abstract bool IsPointInObject(Vector2 point);
     }
 }
