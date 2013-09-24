@@ -19,7 +19,7 @@ namespace MonoFramework
             GameObjects = new List<GameObjectBase>();
             SoundEffects = new Dictionary<string, SoundEffect>();
             Songs = new Dictionary<string, Song>();
-            
+            Models = new Dictionary<string, Model>();
         }
 
         public Dictionary<string, Texture2D> Textures { get; set; }
@@ -27,6 +27,7 @@ namespace MonoFramework
         public List<GameObjectBase> GameObjects { get; set; }
         public Dictionary<string, SoundEffect> SoundEffects { get; set; }
         public Dictionary<string, Song> Songs { get; set; }
+        public Dictionary<string, Model> Models { get; set; }
 
         protected virtual void UpdateAll(GameTime time)
         {
