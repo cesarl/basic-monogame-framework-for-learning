@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
 using System.Collections.Generic;
 using MonoFramework;
+using System;
 
 namespace MonoFramework
 {
@@ -100,6 +101,48 @@ namespace MonoFramework
             }
         }
 
-    }
+        public SpriteObject[] GetSpritesAtPoint(Vector2 pos)
+        {
+            SpriteObject obj;
+            // looks like a little bit dirty -> can result in huge allocation
+            // to verify
+            SpriteObject[] sel = new SpriteObject[GameObjects.Count];
+            int hitCount = 0;
 
+            foreach (GameObjectBase o in GameObjects)
+            {
+                if (!(o is SpriteObject))
+                    continue;
+                obj = (SpriteObject)o;
+                if (obj.IsPointInObject(pos))
+                {
+                    sel[hitCount] = obj;
+                    ++hitCount;
+                }
+            }
+            Array.Resize(ref sel, hitCount);
+            return sel;
+        }
+        
+        public SpriteObject GetSpriteAtPoint(Vector2 pos)
+        {
+            SpriteObject obj;
+            SpriteObject sel = null;
+            float lowest = float.MaxValue;
+
+            foreach (GameObjectBase o in GameObjects)
+            {
+                if (!(o is SpriteObject))
+                    continue;
+                obj = (SpriteObject)o;
+                if (obj.Depth <= lowest && obj.IsPointInObject(pos))
+                {
+                    sel = obj;
+                    lowest = obj.Depth;
+                }
+            }
+            return sel;
+        }
+
+    }
 }
